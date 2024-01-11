@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Poppins&family=Rowdies&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Lora', serif;
+    background-color: rgb(149, 81, 42);
+}
+
+header {
+    width: 100vw;
+}
+
+img {
+    width: 100%;
+}
+
+.principal {
+    height: 50px;
+    margin-top: -4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(26, 14, 14);
+}
+
+.listaprincipal {
+    list-style-type: none;
+    text-align: center;
+    display: flex;
+    margin-bottom: 10px; /* Añadido: Espacio inferior entre las dos nav */
+}
+
+.listaprincipal li,
+.categoria li {
+    display: inline;
+    text-align: center;
+    margin: 0 70px 0 70px;
+    font-size: 25px;
+}
+
+.listaprincipal a,
+.categoria a {
+    text-decoration: none;
+    color: rgb(238, 227, 224);
+    display: inline-block;
+}
+
+.listaprincipal a:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s;
+}
+
+.categoria {
+    text-align: center;
+    margin: auto; /* Añadido: Para centrar la segunda lista */
+}
+
+.categoria1,
+.categoria2 {
+    border: 2px solid white;
+    border-radius: 15px; /* Añadido: Bordes redondeados */
+    padding: 10px 20px; /* Añadido: Espaciado interior para hacer que parezca un botón */
+    margin-top: 10px; /* Añadido: Espacio superior entre las dos nav */
+}
+
+.categoria a:hover {
+    transform: none; /* Añadido: Eliminar la transición para la segunda lista */
+    transition: none; /* Añadido: Eliminar la transición para la segunda lista */
+}
+
+.fotopersonaje {
+    width: 300px;
+    border-radius: 10px;
+}
