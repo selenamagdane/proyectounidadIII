@@ -110,6 +110,6 @@ margin-left: 30px;
 @media only screen and (max-width: 768px) {
     .videoprincipal iframe {
         width: 100%; /* Ajusta el ancho al 100% en pantallas más pequeñas */
-        height: auto; /* Esto asegura que la proporción del video se mantenga */
+        height: auto; 
     }
 }
