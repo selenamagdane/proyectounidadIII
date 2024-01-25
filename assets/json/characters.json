@@ -4,7 +4,7 @@
     "name": "Armin Arlelt",
     "img": "https://static.wikia.nocookie.net/shingekinokyojin/images/9/93/Armin_Arlelt_%28Anime%29_character_image.png/revision/latest/scale-to-width-down/350?cb=20210322005647",
     "alias": ["Colossal Titan"],
-    "species": ["Human", "Intelligent Titan"],
+    "species": ["Human", "Intelligent Titan", "Titan (formerly human)"],
     "gender": "Male",
     "age": 19,
     "height": "60 m (Colossal Titan form)",
@@ -106,7 +106,7 @@
   },
   {
     "id": 2,
-    "name": "Mikasa Ackermann",
+    "name": "Mikasa Ackerman",
     "img": "https://static.wikia.nocookie.net/shingekinokyojin/images/4/4f/Mikasa_Ackermann_%28Anime%29_character_image.png/revision/latest/scale-to-width-down/350?cb=20210221220718",
     "alias": [],
     "species": ["Human"],
@@ -463,7 +463,7 @@
     "birthplace": "Underground",
     "residence": "Wall Rose",
     "status": "Alive",
-    "occupation": "Thug",
+    "occupation": "Soldier",
     "groups": [
       { "name": "Scout Regiment", "sub_groups": ["Special Operations Squad"] }
     ],
@@ -6274,7 +6274,7 @@
     "birthplace": "Liberio",
     "residence": "Marley",
     "status": "Alive",
-    "occupation": "unknown",
+    "occupation": "Warrior",
     "groups": [{ "name": "Anti-Marleyan Volunteers", "sub_groups": [] }],
     "roles": ["Beast Titans"],
     "episodes": [
@@ -6384,16 +6384,9 @@
     "name": "Eren Jaeger",
     "img": "https://static.wikia.nocookie.net/shingekinokyojin/images/a/a1/Eren_Jaeger_%28Anime%29_character_image.png/revision/latest/scale-to-width-down/350?cb=20220123225500",
     "alias": [
-      "Suicidal Maniac",
       "Titan boy",
       "Attack Titan",
-      "Mysterious Titan",
-      "Berserk Titan",
-      "Founding Titan",
-      "Founder",
       "Mister Kruger",
-      "Usurper",
-      "War Hammer Titan",
       "Doomsday Titan"
     ],
     "species": ["Human", "Intelligent Titan"],

@@ -1,5 +1,6 @@
 $(document).ready(function() {
-    var personajesJson; // Cambié el nombre a personajesJson
+    var personajesJson;
+    var personajesOriginales; // Mantener una copia original
 
     function cargarPersonajes() {
         $.ajax({
@@ -7,7 +8,8 @@ $(document).ready(function() {
             dataType: 'json',
             success: function(data) {
                 personajesJson = data;
-                mostrarPersonajes();
+                personajesOriginales = data; // Guardar la copia original
+                mostrarPersonajes(personajesJson);
             },
             error: function(xhr, status, error) {
                 console.error('Error al cargar el archivo JSON:', status, error);
@@ -15,10 +17,12 @@ $(document).ready(function() {
         });
     }
 
-    function mostrarPersonajes() {
+    function mostrarPersonajes(personajes) {
         var container = $('#episodios-container');
 
-        personajesJson.forEach(function(personaje) {
+        container.empty(); // Limpiar el contenedor
+
+        personajes.forEach(function(personaje) {
             var personajeDiv = $('<div class="personajecard personaje"></div>');
             personajeDiv.append('<img class="modelo" src="' + obtenerEnlaceImagen(personaje.img) + '" alt="' + personaje.name + '">');
             personajeDiv.append('<h2>' + personaje.name + '</h2>');
@@ -35,35 +39,45 @@ $(document).ready(function() {
         });
     }
 
-    cargarPersonajes();
-});
+    function obtenerEnlaceImagen(originalLink) {
+        if (originalLink === undefined || typeof originalLink !== 'string' || originalLink.trim() === '') {
+            console.error('El enlace de la imagen no es una cadena válida:', originalLink);
+            return '';
+        }
 
-function obtenerEnlaceImagen(originalLink) {
-    // Verificar si el enlace es undefined o no es una cadena válida
-    if (originalLink === undefined || typeof originalLink !== 'string' || originalLink.trim() === '') {
-        console.error('El enlace de la imagen no es una cadena válida:', originalLink);
-        return ''; // Devolver una cadena vacía o el enlace correcto según tus necesidades
+        var indicePng = originalLink.indexOf('.png');
+        var indiceJpg = originalLink.indexOf('.jpg');
+        var indiceJpeg = originalLink.indexOf('.jpeg');
+        var indices = [indicePng, indiceJpg, indiceJpeg].filter(function (indice) {
+            return indice !== -1;
+        });
+        var indiceMinimo = Math.min.apply(null, indices);
+
+        if (indiceMinimo !== Infinity) {
+            var enlaceCorrecto = originalLink.substring(0, indiceMinimo + 4);
+            return enlaceCorrecto;
+        } else {
+            console.error('No se pudo encontrar ".png", ".jpg" o ".jpeg" en el enlace.');
+            return originalLink;
+        }
     }
 
-    // Buscar el índice de la cadena ".png", ".jpg" o ".jpeg" en el enlace
-    var indicePng = originalLink.toLowerCase().indexOf('.png');
-    var indiceJpg = originalLink.toLowerCase().indexOf('.jpg');
-    var indiceJpeg = originalLink.toLowerCase().indexOf('.jpeg');
+    // Evento click para los botones
+    $('.personajesclasifi').click(function() {
+        var clasificacion = this.id;
 
-    // Encontrar el índice más pequeño entre ".png", ".jpg" y ".jpeg"
-    var indices = [indicePng, indiceJpg, indiceJpeg].filter(function (indice) {
-        return indice !== -1;
+        // Filtrar los personajes originales por clasificación
+        var personajesFiltrados = personajesOriginales.filter(function(personaje) {
+            return (
+                (personaje.species && personaje.species.includes(clasificacion)) ||
+                (personaje.occupation && personaje.occupation.includes(clasificacion))
+            );
+        });
+
+        // Mostrar los personajes filtrados
+        mostrarPersonajes(personajesFiltrados);
     });
 
-    var indiceMinimo = Math.min.apply(null, indices);
-
-    // Verificar si alguna de las extensiones se encuentra en el enlace
-    if (indiceMinimo !== Infinity) {
-        // Extraer la subcadena desde el inicio hasta el índice de la extensión y agregar la extensión al final
-        var enlaceCorrecto = originalLink.substring(0, indiceMinimo + 4);
-        return enlaceCorrecto;
-    } else {
-        console.error('No se pudo encontrar ".png", ".jpg" o ".jpeg" en el enlace:', originalLink);
-        return originalLink; // Devuelve el enlace original si no se encuentra ninguna de las extensiones
-    }
-}
+    // Cargar los personajes al iniciar la página
+    cargarPersonajes();
+});
