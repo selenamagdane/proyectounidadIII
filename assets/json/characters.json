@@ -547,29 +547,6 @@
     ]
   },
   {
-    "id": 7,
-    "name": "Lima",
-    "alias": [],
-    "species": ["Human"],
-    "gender": "unknown",
-    "age": "unknown",
-    "height": "unknown",
-    "relatives": [],
-    "birthplace": "unknown",
-    "residence": "unknown",
-    "status": "Unknown",
-    "occupation": "Soldier",
-    "groups": [],
-    "roles": [],
-    "episodes": [
-      "https://api.attackontitanapi.com/episodes/26",
-      "https://api.attackontitanapi.com/episodes/27",
-      "https://api.attackontitanapi.com/episodes/28",
-      "https://api.attackontitanapi.com/episodes/29",
-      "https://api.attackontitanapi.com/episodes/34"
-    ]
-  },
-  {
     "id": 8,
     "name": "Hange Zoë",
     "img": "https://static.wikia.nocookie.net/shingekinokyojin/images/e/e4/Hange_Zo%C3%AB_%28Anime%29_character_image.png/revision/latest/scale-to-width-down/350?cb=20210221212604",

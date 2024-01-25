@@ -148,3 +148,22 @@ nav{
     background-color: #e3e8ebc0;
     text-align: left;
 }
+.personajes {
+    display: flex;
+    justify-content: center;
+
+}
+
+.personajecard {
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    text-align: center;
+    font-family:CentSchbkCyrill BT;
+    width: 300px;
+    border: 4px solid rgb(8, 17, 43);
+    border-radius: 20px;
+    padding: 30px;
+    background-color: #e3e8ebc0;
+    text-align: left;
+}
