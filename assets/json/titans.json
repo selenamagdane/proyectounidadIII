@@ -19,7 +19,6 @@
     "height": "350m",
     "abilities": [
       "Titan creation",
-      "Titan behavioral control",
       "Memory and body manipulation of subjects of ymir",
       "Telepathic communication with subjects of ymir"
     ],
@@ -87,7 +86,7 @@
       "Powerful and accurate throwing",
       "Hardening",
       "Speech",
-      "Can turn subjects of ymir into titans that he can crudely control (users with royal blood only)"
+      "Can turn ymir's subjects into titans (only users with royal blood)"
     ],
     "current_inheritor": "https://api.attackontitanapi.com/characters/184",
     "former_inheritors": ["https://api.attackontitanapi.com/characters/97"],

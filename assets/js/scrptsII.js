@@ -1,6 +1,6 @@
 $(document).ready(function() {
     var personajesJson;
-    var personajesOriginales; // Mantener una copia original
+    var personajesOriginales;
 
     function cargarPersonajes() {
         $.ajax({
@@ -8,7 +8,7 @@ $(document).ready(function() {
             dataType: 'json',
             success: function(data) {
                 personajesJson = data;
-                personajesOriginales = data; // Guardar la copia original
+                personajesOriginales = data;
                 mostrarPersonajes(personajesJson);
             },
             error: function(xhr, status, error) {
@@ -19,8 +19,7 @@ $(document).ready(function() {
 
     function mostrarPersonajes(personajes) {
         var container = $('#episodios-container');
-
-        container.empty(); // Limpiar el contenedor
+        container.empty();
 
         personajes.forEach(function(personaje) {
             var personajeDiv = $('<div class="personajecard personaje"></div>');
@@ -48,7 +47,7 @@ $(document).ready(function() {
         var indicePng = originalLink.indexOf('.png');
         var indiceJpg = originalLink.indexOf('.jpg');
         var indiceJpeg = originalLink.indexOf('.jpeg');
-        var indices = [indicePng, indiceJpg, indiceJpeg].filter(function (indice) {
+        var indices = [indicePng, indiceJpg, indiceJpeg].filter(function(indice) {
             return indice !== -1;
         });
         var indiceMinimo = Math.min.apply(null, indices);
@@ -66,7 +65,6 @@ $(document).ready(function() {
     $('.personajesclasifi').click(function() {
         var clasificacion = this.id;
 
-        // Filtrar los personajes originales por clasificación
         var personajesFiltrados = personajesOriginales.filter(function(personaje) {
             return (
                 (personaje.species && personaje.species.includes(clasificacion)) ||
@@ -74,10 +72,19 @@ $(document).ready(function() {
             );
         });
 
-        // Mostrar los personajes filtrados
         mostrarPersonajes(personajesFiltrados);
     });
 
     // Cargar los personajes al iniciar la página
     cargarPersonajes();
 });
+
+function mostrarPersonajesPorId(idHeredero) {
+    var personajesFiltrados = personajesOriginales.filter(function(personaje) {
+        // Comparar el ID extraído con el ID del personaje
+        return personaje.id == idHeredero;
+    });
+
+    mostrarPersonajes(personajesFiltrados);
+}
+
