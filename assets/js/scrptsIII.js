@@ -28,13 +28,11 @@ $(document).ready(function() {
             titanDiv.append('<br>');
             titanDiv.append('<p>Tamaño: ' + (titan.height ? titan.height : 'N/A') + '</p>');
             titanDiv.append('<p>Habilidades: ' + (titan.abilities ? titan.abilities.join(', ') : 'N/A') + '</p>');
-            titanDiv.append('<p>Heredero actual: <a class="enlaceHerederoActual" href="ventanaprueba.html">Ver heredero actual</a></p>');
 
             var formerInheritorsList = titan.former_inheritors.map(function(inheritor) {
                 return '<a href="' + inheritor + '">Heredero anterior</a>';
             });
 
-            titanDiv.append('<p>Herederos anteriores: ' + (formerInheritorsList.length > 0 ? formerInheritorsList.join(', ') : 'N/A') + '</p>');
             titanDiv.append('<p>Alianza: ' + (titan.allegiance ? titan.allegiance : 'N/A') + '</p>');
             
             var herederosLink = $('<a href="ventanaprueba.html">HEREDEROS</a>');

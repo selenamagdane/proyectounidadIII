@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
 
 * {
     margin: 0;
@@ -51,7 +51,7 @@ nav{
 }
 
 .listaprincipal a {
-    font-family: Algerian;
+    font-family: 'IM Fell English SC', serif;
     text-decoration: none;
     color: #fff;
     font-size: 30px;
@@ -93,7 +93,7 @@ nav{
 .titulo {
     font-size: 40px;
     margin-bottom: 10px;
-    font-family: Algerian;
+    font-family: 'IM Fell English SC', serif;
     color: #fff; /* Color del texto */
     -webkit-text-stroke: 0.1px rgb(8, 17, 43);
 }
@@ -204,7 +204,7 @@ button {
     color: #fff;
     border-radius: 15px;
     border-color: white;
-    font-family: CentSchbkCyrill BT;
+    font-family: 'IM Fell English SC', serif;
     font-size: 23px;
     cursor: pointer;
 }
